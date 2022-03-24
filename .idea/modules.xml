@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/9.HttpClient/9.HttpClient.iml" filepath="$PROJECT_DIR$/9.HttpClient/9.HttpClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05.TestNG/05.TestNG.iml" filepath="$PROJECT_DIR$/05.TestNG/05.TestNG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/9.HttpClient/09.HttpClient.iml" filepath="$PROJECT_DIR$/9.HttpClient/09.HttpClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/AutoTest.iml" filepath="$PROJECT_DIR$/AutoTest.iml" />
     </modules>
   </component>

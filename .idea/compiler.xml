@@ -6,11 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="9.HttpClient" />
+        <module name="05.TestNG" />
+      </profile>
+      <profile name="Annotation profile for 9.HttpClient" enabled="true">
+        <sourceOutputDir name="../9.HttpClient/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../9.HttpClient/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="09.HttpClient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="9.HttpClient" target="8" />
+      <module name="05.TestNG" target="8" />
+      <module name="09.HttpClient" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
