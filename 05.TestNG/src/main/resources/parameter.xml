@@ -2,6 +2,7 @@
 <suite name="parameter">
     <test name="paratest">
         <classes>
+            <!--指明具体参数给测试方法-->
             <parameter name="name" value="Tom"/>
             <parameter name="age" value="27"/>
 

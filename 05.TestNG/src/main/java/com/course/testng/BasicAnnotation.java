@@ -3,6 +3,14 @@ package com.course.testng;
 import org.testng.annotations.*;
 
 /**
+ * 基本的几种注解
+ * 执行顺序：
+ * BeforeClass
+ * BeforeMethod
+ * Test
+ * AfterMethod
+ * AfterClass
+ *
  * @author chenpi
  * @create 2022-03-24 16:55
  */

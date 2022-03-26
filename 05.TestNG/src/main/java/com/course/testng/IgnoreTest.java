@@ -3,6 +3,8 @@ package com.course.testng;
 import org.testng.annotations.Test;
 
 /**
+ * 忽略测试
+ *
  * @author chenpi
  * @create 2022-03-26 9:55
  */

@@ -10,6 +10,7 @@
     </test>
 
     <test name="runOnlyStu">
+        <!--声明要运行的组-->
         <groups>
             <run>
                 <include name="stu"/>

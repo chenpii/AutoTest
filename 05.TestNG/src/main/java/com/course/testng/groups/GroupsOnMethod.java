@@ -5,6 +5,12 @@ import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
 /**
+ * 分组测试
+ * 执行顺序：
+ * BeforeGroups
+ * Test
+ * AfterGroups
+ *
  * @author chenpi
  * @create 2022-03-26 10:00
  */
