@@ -1,0 +1,32 @@
+[
+  {
+    "description": "模拟无参get请求",
+    "request": {
+      "uri": "/getdemo",
+      "method": "get"
+    },
+    "response": {
+      "text": "无参get请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "模拟带参get请求",
+    "request": {
+      "uri": "/getWithParaDemo",
+      "method": "get",
+      "queries": {
+        "name": "huhansan",
+        "age": "18"
+      }
+    },
+    "response": {
+      "text": "我胡汉三又回来了！",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  }
+]
