@@ -9,6 +9,7 @@
         <module name="05.TestNG" />
         <module name="AutoTest" />
         <module name="06.ExtendReport" />
+        <module name="09.HttpClient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
