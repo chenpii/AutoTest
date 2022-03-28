@@ -7,17 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="05.TestNG" />
-      </profile>
-      <profile name="Annotation profile for 9.HttpClient" enabled="true">
-        <sourceOutputDir name="../9.HttpClient/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../9.HttpClient/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="09.HttpClient" />
+        <module name="AutoTest" />
+        <module name="06.ExtendReport" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="05.TestNG" target="8" />
+      <module name="06.ExtendReport" target="8" />
       <module name="09.HttpClient" target="8" />
+      <module name="AutoTest" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/9.HttpClient/pom.xml" />
         <option value="$PROJECT_DIR$/05.TestNG/pom.xml" />
+        <option value="$PROJECT_DIR$/06.ExtendReport/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
