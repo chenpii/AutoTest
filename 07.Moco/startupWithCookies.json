@@ -14,5 +14,21 @@
         "Content-Type": "text/html;charset=gbk"
       }
     }
+  },
+  {
+    "description": "这是一个带cookies信息的post请求",
+    "request": {
+      "uri": "/post/with/cookies",
+      "method": "post",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "这是一个需要携带cookies信息才能访问的post请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
   }
 ]
