@@ -15,7 +15,7 @@
   {
     "description": "模拟带参get请求",
     "request": {
-      "uri": "/getWithParaDemo",
+      "uri": "/getWithParam",
       "method": "get",
       "queries": {
         "name": "huhansan",

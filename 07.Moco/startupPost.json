@@ -6,7 +6,24 @@
       "method": "post"
     },
     "response": {
-      "text": "这是一个mock的post请求",
+      "text": "这是第一个mock的post请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "这是一个带参的post请求",
+    "request": {
+      "uri": "/postWithParam",
+      "method": "post",
+      "forms": {
+        "name": "huhansan",
+        "sex": "man"
+      }
+    },
+    "response": {
+      "text": "胡汉三带着参数回来了",
       "headers": {
         "Content-Type": "text/html;charset=gbk"
       }
