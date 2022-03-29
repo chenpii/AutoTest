@@ -22,10 +22,18 @@
       "method": "post",
       "cookies": {
         "login": "true"
+      },
+      "json": {
+        "name": "huhansan",
+        "age": "18"
       }
     },
     "response": {
-      "text": "这是一个需要携带cookies信息才能访问的post请求",
+      "status": 200,
+      "json": {
+        "huhansan": "success",
+        "status": 1
+      },
       "headers": {
         "Content-Type": "text/html;charset=gbk"
       }
