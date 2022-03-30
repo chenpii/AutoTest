@@ -3,8 +3,10 @@ package com.course.httpclient.cookies;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.testng.Assert;
@@ -12,6 +14,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -37,9 +40,20 @@ public class MyCookiesForGet {
         String result;
 
         HttpGet httpGet = new HttpGet(fullUrl);
-        HttpClient httpClient = new DefaultHttpClient();
+        DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpResponse response = httpClient.execute(httpGet);
         result = EntityUtils.toString(response.getEntity());
+        System.out.println(result);
+
+        //获取Cookies
+        CookieStore store = httpClient.getCookieStore();
+        List<Cookie> cookies = store.getCookies();
+
+        for (Cookie c : cookies) {
+            String name = c.getName();
+            String value = c.getValue();
+            System.out.println("name=" + name + ",value=" + value);
+        }
 
         //断言包含某值
         Assert.assertTrue(result.contains("成功"));
@@ -54,7 +68,7 @@ public class MyCookiesForGet {
         String result;
 
         HttpGet httpGet = new HttpGet(fullUrl);
-        HttpClient httpClient = new DefaultHttpClient();
+        DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpResponse response = httpClient.execute(httpGet);
         result = EntityUtils.toString(response.getEntity());
         JSONObject jsonObject = JSON.parseObject(result);
