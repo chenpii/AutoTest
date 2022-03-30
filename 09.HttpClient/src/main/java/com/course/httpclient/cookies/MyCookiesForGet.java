@@ -2,14 +2,12 @@ package com.course.httpclient.cookies;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -43,8 +41,8 @@ public class MyCookiesForGet {
         HttpResponse response = httpClient.execute(httpGet);
         result = EntityUtils.toString(response.getEntity());
         JSONObject jsonObject = JSON.parseObject(result);
-        Assert.assertEquals(jsonObject.getString("huhansan"),"success");
-        Assert.assertEquals(jsonObject.getInteger("status"),1);
+        Assert.assertEquals(jsonObject.getString("code"), "1181000");
+        Assert.assertEquals(jsonObject.getString("message"), "成功");
 
     }
 
