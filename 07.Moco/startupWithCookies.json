@@ -10,7 +10,10 @@
         "login": "true",
         "status": "10000"
       },
-      "text": "恭喜获得cookies信息成功",
+      "json": {
+        "huhansan": "success",
+        "status": 1
+      },
       "headers": {
         "Content-Type": "text/html;charset=gbk"
       }
