@@ -10,6 +10,19 @@
         "login": "true",
         "status": "10000"
       },
+      "text": "获取Cookies信息成功",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+    {
+    "description": "这是一个返回JSON数据的get请求",
+    "request": {
+      "uri": "/getJson",
+      "method": "get"
+    },
+    "response": {
       "json": {
         "code": "1181000",
         "message": "成功"

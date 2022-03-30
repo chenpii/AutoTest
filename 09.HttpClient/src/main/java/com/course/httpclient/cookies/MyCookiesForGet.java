@@ -40,11 +40,28 @@ public class MyCookiesForGet {
         HttpClient httpClient = new DefaultHttpClient();
         HttpResponse response = httpClient.execute(httpGet);
         result = EntityUtils.toString(response.getEntity());
+
+        //断言包含某值
+        Assert.assertTrue(result.contains("成功"));
+
+    }
+
+    @Test
+    public void testJson() throws IOException {
+        //从配置文件中获取URL
+        String uri = bundle.getString("getJson.uri");
+        String fullUrl = url + uri;
+        String result;
+
+        HttpGet httpGet = new HttpGet(fullUrl);
+        HttpClient httpClient = new DefaultHttpClient();
+        HttpResponse response = httpClient.execute(httpGet);
+        result = EntityUtils.toString(response.getEntity());
         JSONObject jsonObject = JSON.parseObject(result);
+        //断言Json字段值相等
         Assert.assertEquals(jsonObject.getString("code"), "1181000");
         Assert.assertEquals(jsonObject.getString("message"), "成功");
 
     }
-
 
 }
