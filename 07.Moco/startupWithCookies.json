@@ -11,8 +11,8 @@
         "status": "10000"
       },
       "json": {
-        "huhansan": "success",
-        "status": 1
+        "code": "1181000",
+        "message": "成功"
       },
       "headers": {
         "Content-Type": "text/html;charset=gbk"
