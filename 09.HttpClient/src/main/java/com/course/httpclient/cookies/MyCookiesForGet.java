@@ -2,6 +2,7 @@ package com.course.httpclient.cookies;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
@@ -24,6 +25,9 @@ import java.util.ResourceBundle;
 public class MyCookiesForGet {
     private String url;
     private ResourceBundle bundle;
+    //用来保存cookies
+    private CookieStore store;
+
 
     @BeforeTest
     public void beforeTest() {
@@ -33,49 +37,55 @@ public class MyCookiesForGet {
     }
 
     @Test
-    public void test() throws IOException {
+    public void testGetCookies() throws IOException {
         //从配置文件中获取URL
         String uri = bundle.getString("getCookies.uri");
-        String fullUrl = url + uri;
+        String fullUrl = this.url + uri;
         String result;
-
         HttpGet httpGet = new HttpGet(fullUrl);
         DefaultHttpClient httpClient = new DefaultHttpClient();
+
+        //执行get请求
         HttpResponse response = httpClient.execute(httpGet);
         result = EntityUtils.toString(response.getEntity());
-        System.out.println(result);
 
         //获取Cookies
-        CookieStore store = httpClient.getCookieStore();
+        this.store = httpClient.getCookieStore();
         List<Cookie> cookies = store.getCookies();
-
         for (Cookie c : cookies) {
             String name = c.getName();
             String value = c.getValue();
-            System.out.println("name=" + name + ",value=" + value);
+            System.out.println("cookie : name=" + name + ",value=" + value);
         }
 
         //断言包含某值
         Assert.assertTrue(result.contains("成功"));
-
     }
 
-    @Test
-    public void testJson() throws IOException {
+    @Test(dependsOnMethods = "testGetCookies")
+    public void testGetWithCookies() throws IOException {
         //从配置文件中获取URL
-        String uri = bundle.getString("getJson.uri");
-        String fullUrl = url + uri;
+        String uri = bundle.getString("getWithCookies.uri");
+        String fullUrl = this.url + uri;
         String result;
-
         HttpGet httpGet = new HttpGet(fullUrl);
         DefaultHttpClient httpClient = new DefaultHttpClient();
+
+        //设置cookies
+        httpClient.setCookieStore(this.store);
+
+
+        //执行get请求
         HttpResponse response = httpClient.execute(httpGet);
+
+        //获取响应状态码
+        int statusCode = response.getStatusLine().getStatusCode();
+        Assert.assertEquals(statusCode, 200);
+
         result = EntityUtils.toString(response.getEntity());
-        JSONObject jsonObject = JSON.parseObject(result);
-        //断言Json字段值相等
-        Assert.assertEquals(jsonObject.getString("code"), "1181000");
-        Assert.assertEquals(jsonObject.getString("message"), "成功");
+        System.out.println(result);
 
     }
+
 
 }

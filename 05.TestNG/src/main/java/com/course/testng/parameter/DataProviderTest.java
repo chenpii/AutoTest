@@ -8,10 +8,10 @@ import java.lang.reflect.Method;
 /**
  * 参数化测试
  * 方式二：
- *
+ * <p>
  * 通过具体的方法提供测试数据
- *Test(dataProvider = "nameAndAge") 指定参数来源
- *DataProvider(name = "nameAndAge") 提供测试数据
+ * Test(dataProvider = "nameAndAge") 指定参数来源
+ * DataProvider(name = "nameAndAge") 提供测试数据
  *
  * @author chenpi
  * @create 2022-03-26 14:41

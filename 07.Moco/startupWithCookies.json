@@ -7,8 +7,7 @@
     },
     "response": {
       "cookies": {
-        "login": "true",
-        "status": "10000"
+        "login": "true"
       },
       "text": "获取Cookies信息成功",
       "headers": {
@@ -16,7 +15,7 @@
       }
     }
   },
-    {
+  {
     "description": "这是一个返回JSON数据的get请求",
     "request": {
       "uri": "/getJson",
