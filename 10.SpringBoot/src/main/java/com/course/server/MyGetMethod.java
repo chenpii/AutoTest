@@ -21,7 +21,7 @@ import java.util.Objects;
  * @create 2022-04-05 10:18
  */
 @RestController
-@Api(value = "/", description = "全部的get方法")
+@Api(value = "/", description = "全部的GET方法")
 public class MyGetMethod {
 
     @RequestMapping(value = "/getCookies", method = RequestMethod.GET)
