@@ -1,5 +1,6 @@
 package com.course.server;
 
+import com.course.bean.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +38,11 @@ public class MyPostMethod {
             return "登录成功，获取到Cookies";
         }
         throw new RuntimeException("用户密码错误，登录失败！");
+    }
 
+@RequestMapping(value = "/getUser")
+    public User getUsers() {
+        User user = new User();
+        return user;
     }
 }
