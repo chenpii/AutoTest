@@ -1,12 +1,12 @@
 package com.course.server;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -53,4 +53,46 @@ public class MyGetMethod {
         return "未携带Cookies信息";
 
     }
+
+    /**
+     * 一个需要携带参数才能访问的get请求
+     * 方式一
+     * ----url:key=value&&key=value
+     * <p>
+     *
+     * 模拟获取商品列表
+     */
+
+    /**
+     * @param start 起始位置
+     * @param end   结束位置
+     * @return 商品列表
+     */
+    @RequestMapping(value = "/getWithParam", method = RequestMethod.GET)
+    public Map<String, Integer> getList(@RequestParam Integer start, @RequestParam Integer end) {
+
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("鞋", 400);
+        map.put("干脆面", 1);
+        map.put("衬衫", 300);
+
+        return map;
+    }
+
+    /**
+     * 一个需要携带参数才能访问的get请求
+     * 方式二
+     * ----url:ip:port/getWithParam/10/20
+     */
+    @RequestMapping(value = "getWithParam/{start}/{end}", method = RequestMethod.GET)
+    public Map<String, Integer> getLists(@PathVariable Integer start, @PathVariable Integer end) {
+        Map<String, Integer> map = new HashMap<String, Integer>();
+
+        map.put("鞋", 400);
+        map.put("干脆面", 1);
+        map.put("衬衫", 300);
+
+        return map;
+    }
+
 }
