@@ -18,6 +18,7 @@
         <module>06.ExtendReport</module>
         <module>09.HttpClient</module>
         <module>10.SpringBoot</module>
+        <module>11.MyBatis</module>
     </modules>
 
     <properties>
