@@ -19,8 +19,9 @@ public class Application {
     public static void main(String[] args) {
         Application.context = SpringApplication.run(Application.class, args);
     }
+
     @PreDestroy
-    public void close(){
-Application.context.close();
+    public void close() {
+        Application.context.close();
     }
 }
