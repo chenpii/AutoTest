@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
  */
 public class LoginTest {
     @Test
-    public void loginTaoBao() {
-        System.out.println("登录淘宝");
+    public static void loginTaoBao() {
+        System.out.println("登录成功");
     }
 }
