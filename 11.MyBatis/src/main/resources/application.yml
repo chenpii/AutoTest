@@ -12,7 +12,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/course?serverTimezone=CST
     username: root
-    password: 310012
+    password: 123456
 
 mybatis:
   type-aliases-package: com.course.model

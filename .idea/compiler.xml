@@ -9,6 +9,7 @@
         <module name="05.TestNG" />
         <module name="06.ExtendReport" />
         <module name="09.HttpClient" />
+        <module name="12.CaseManage" />
         <module name="11.MyBatis" />
         <module name="10.SpringBoot" />
       </profile>
@@ -19,6 +20,7 @@
       <module name="09.HttpClient" target="8" />
       <module name="10.SpringBoot" target="8" />
       <module name="11.MyBatis" target="8" />
+      <module name="12.CaseManage" target="8" />
       <module name="AutoTest" target="8" />
     </bytecodeTargetLevel>
   </component>
@@ -26,6 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="10.SpringBoot" options="-parameters" />
       <module name="11.MyBatis" options="-parameters" />
+      <module name="12.CaseManage" options="-parameters" />
     </option>
   </component>
 </project>

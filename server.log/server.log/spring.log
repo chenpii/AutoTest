@@ -285,3 +285,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 2022-04-09 11:30:57.797 [http-nio-8090-exec-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 2022-04-09 11:30:57.799 [http-nio-8090-exec-8] WARN  com.zaxxer.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
 2022-04-09 11:30:58.186 [http-nio-8090-exec-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-09 13:49:37.510 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-04-09 13:49:37.523 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-04-09 13:49:37.531 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-04-09 13:49:37.557 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

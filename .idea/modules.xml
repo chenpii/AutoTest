@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/09.HttpClient/09.HttpClient.iml" filepath="$PROJECT_DIR$/09.HttpClient/09.HttpClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.SpringBoot/10.SpringBoot.iml" filepath="$PROJECT_DIR$/10.SpringBoot/10.SpringBoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/11.MyBatis/11.MyBatis.iml" filepath="$PROJECT_DIR$/11.MyBatis/11.MyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12.CaseManage/12.CaseManage.iml" filepath="$PROJECT_DIR$/12.CaseManage/12.CaseManage.iml" />
       <module fileurl="file://$PROJECT_DIR$/AutoTest.iml" filepath="$PROJECT_DIR$/AutoTest.iml" />
     </modules>
   </component>
