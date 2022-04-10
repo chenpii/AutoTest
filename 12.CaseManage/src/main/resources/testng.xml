@@ -37,4 +37,7 @@
 
     </test>
 
+    <listeners>
+        <listener class-name="com.course.config.ExtentTestNGIReporterListener"/>
+    </listeners>
 </suite>
