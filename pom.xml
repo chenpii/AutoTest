@@ -20,6 +20,7 @@
         <module>10.SpringBoot</module>
         <module>11.MyBatis</module>
         <module>12.CaseManage</module>
+        <module>13.DataAssert</module>
     </modules>
 
     <properties>
