@@ -84,11 +84,11 @@ CREATE TABLE `logincase` (
 
 insert  into `logincase`(`id`,`userName`,`password`,`expected`) values (1,'zhangsan','123456','true'),(2,'zhangsanerror','123','false');
 
-/*Table structure for table `updateusercase` */
+/*Table structure for table `updateuserinfocase` */
 
-DROP TABLE IF EXISTS `updateusercase`;
+DROP TABLE IF EXISTS `updateuserinfocase`;
 
-CREATE TABLE `updateusercase` (
+CREATE TABLE `updateuserinfocase` (
   `id` int NOT NULL AUTO_INCREMENT,
   `userId` int DEFAULT NULL,
   `userName` varchar(100) COLLATE utf8_bin DEFAULT NULL,
@@ -100,9 +100,9 @@ CREATE TABLE `updateusercase` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
 
-/*Data for the table `updateusercase` */
+/*Data for the table `updateuserinfocase` */
 
-insert  into `updateusercase`(`id`,`userId`,`userName`,`sex`,`age`,`permission`,`isDelete`,`expected`) values (1,2,'hahahaha',NULL,NULL,NULL,NULL,'getUpdateUserInfo'),(2,8,NULL,NULL,NULL,NULL,1,'getUpdateUserInfo');
+insert  into `updateuserinfocase`(`id`,`userId`,`userName`,`sex`,`age`,`permission`,`isDelete`,`expected`) values (1,2,'hahahaha',NULL,NULL,NULL,NULL,'getUpdateUserInfo'),(2,8,NULL,NULL,NULL,NULL,1,'getUpdateUserInfo');
 
 /*Table structure for table `user` */
 
