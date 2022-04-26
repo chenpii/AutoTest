@@ -68,11 +68,25 @@ public class UserManager {
     @ApiOperation(value = "获取用户信息列表", httpMethod = "POST")
     public List<User> getUserInfoList(HttpServletRequest request,
                                       @RequestBody User user) {
-        List<User> userList=null;
+
         if (veryCookies(request)) {
+            List<User> userList = template.selectList("getUserInfoList", user);
+            log.info("获取到的用户数量是" + userList.size());
             return userList;
         }
         return null;
+    }
+
+    @RequestMapping(value = "/updateUserInfo", method = RequestMethod.POST)
+    @ApiOperation(value = "更新/删除用户", httpMethod = "POST")
+    public int updateUser(HttpServletRequest request,
+                          @RequestBody User user) {
+        int i = 0;
+        if (veryCookies(request)) {
+            i = template.update("updateUserInfo", user);
+        }
+        log.info("更新用户的数量为:" + i);
+        return i;
     }
 
     private Boolean veryCookies(HttpServletRequest request) {
