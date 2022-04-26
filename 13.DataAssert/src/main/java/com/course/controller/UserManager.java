@@ -16,6 +16,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.nio.file.OpenOption;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -46,7 +47,7 @@ public class UserManager {
         }
     }
 
-    @RequestMapping(value = "/adduser", method = RequestMethod.POST)
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     @ApiOperation(value = "新增用户", httpMethod = "POST")
     public boolean addUser(HttpServletRequest request,
                            @RequestBody User user) {
@@ -61,6 +62,17 @@ public class UserManager {
         }
         return false;
 
+    }
+
+    @RequestMapping(value = "/getUserInfoList", method = RequestMethod.POST)
+    @ApiOperation(value = "获取用户信息列表", httpMethod = "POST")
+    public List<User> getUserInfoList(HttpServletRequest request,
+                                      @RequestBody User user) {
+        List<User> userList=null;
+        if (veryCookies(request)) {
+            return userList;
+        }
+        return null;
     }
 
     private Boolean veryCookies(HttpServletRequest request) {
