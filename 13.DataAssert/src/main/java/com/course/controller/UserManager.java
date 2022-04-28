@@ -37,10 +37,10 @@ public class UserManager {
                          @RequestBody User user) {
         int i = template.selectOne("login", user);
         Cookie cookie = new Cookie("login", "true");
-        response.addCookie(cookie);
         log.info("查询到的用户是" + i);
         if (i == 1) {
             log.info("登录的用户是" + user.getUserName());
+            response.addCookie(cookie);
             return true;
         } else {
             return false;
