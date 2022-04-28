@@ -19,13 +19,13 @@
     </insert>
 
     <!--获取用户信息sql-->
-    <select id="getUserInfo" parameterType="com.course.model.User">
+    <select id="getUserInfo" parameterType="com.course.model.User" resultType="com.course.model.User">
         select * from user
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null !=id and  '' !=id">
                 AND id=#{id}
             </if>
-            <if test="null != userName and '' !=username">
+            <if test="null != userName and '' !=userName">
                 AND userName=#{userName}
             </if>
             <if test="null !=password and '' !=password">

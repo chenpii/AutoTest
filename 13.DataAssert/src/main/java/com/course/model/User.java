@@ -14,5 +14,5 @@ public class User {
     private int age;
     private int sex;
     private int permission;
-    private int idDelete;
+    private int isDelete;
 }
