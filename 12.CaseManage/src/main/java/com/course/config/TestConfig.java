@@ -17,7 +17,7 @@ public class TestConfig {
     public static String getUserInfoUrl;
     public static String addUserUrl;
 
-    public static DefaultHttpClient httpClient;
+    public static DefaultHttpClient defaultHttpClient;
     public static CookieStore store;
 
 }
