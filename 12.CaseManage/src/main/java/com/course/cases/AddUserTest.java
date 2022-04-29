@@ -39,7 +39,7 @@ public class AddUserTest {
         //验证返回结果
         User user = sqlSession.selectOne("addUser", addUserCase);
         System.out.println(user.toString());
-        Assert.assertEquals(addUserCase.getExpeceted(), result);
+        Assert.assertEquals(addUserCase.getExpected(), result);
 
     }
 
@@ -71,6 +71,6 @@ public class AddUserTest {
         String result = EntityUtils.toString(response.getEntity(), "utf-8");
         System.out.println(result);
 
-        return null;
+        return result;
     }
 }

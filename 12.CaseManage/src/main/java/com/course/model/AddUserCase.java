@@ -16,5 +16,5 @@ public class AddUserCase {
     private int sex;
     private int permission;
     private int isDelete;
-    private String expeceted;
+    private String expected;
 }

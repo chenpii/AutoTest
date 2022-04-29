@@ -11,16 +11,21 @@
 
     <artifactId>12.CaseManage</artifactId>
     <dependencies>
+        <!--httpclient-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.1.2</version>
         </dependency>
+
+        <!--json工具-->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20170516</version>
         </dependency>
+
+        <!--mybatis-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
@@ -31,17 +36,19 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.6</version>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.14</version>
         </dependency>
+
+        <!--测试报告-->
         <dependency>
             <groupId>com.relevantcodes</groupId>
             <artifactId>extentreports</artifactId>
             <version>2.41.0</version>
         </dependency>
-
         <dependency>
             <groupId>com.vimalselvam</groupId>
             <artifactId>testng-extentsreport</artifactId>
@@ -52,11 +59,15 @@
             <artifactId>extentreports</artifactId>
             <version>3.0.6</version>
         </dependency>
+
+        <!--testng测试框架-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.10</version>
         </dependency>
+
+        <!--日志工具-->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
