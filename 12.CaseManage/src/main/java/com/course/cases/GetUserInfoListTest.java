@@ -27,16 +27,16 @@ public class GetUserInfoListTest {
     public void getUserInfoListBySex() throws IOException {
         //获取id为1的getUserInfoListCase测试数据
         SqlSession sqlSession = DatabaseUtil.getSqlSession();
-        GetUserInfoListCase getUserInfoCase = sqlSession.selectOne("getUserInfoListCase", 1);
-        System.out.println(getUserInfoCase);
+        GetUserInfoListCase getUserInfoListCase = sqlSession.selectOne("getUserInfoListCase", 1);
+        System.out.println(getUserInfoListCase);
         System.out.println(TestConfig.getUserListUrl);
 
         //发送请求获取结果
-        JSONArray resultJson = getResult(getUserInfoCase);
+        JSONArray resultJson = getJsonResult(getUserInfoListCase);
 
         //断言结果
         //从数据库查询到结果
-        List<User> userList = sqlSession.selectList(getUserInfoCase.getExpected(), getUserInfoCase);
+        List<User> userList = sqlSession.selectList(getUserInfoListCase.getExpected(), getUserInfoListCase);
         for (User u : userList) {
             System.out.println("获取到的用户信息：" + u.toString());
         }
@@ -56,7 +56,7 @@ public class GetUserInfoListTest {
 
     }
 
-    private JSONArray getResult(GetUserInfoListCase getUserInfoCase) throws IOException {
+    private JSONArray getJsonResult(GetUserInfoListCase getUserInfoListCase) throws IOException {
         //post请求
         HttpPost post = new HttpPost(TestConfig.getUserListUrl);
 
@@ -68,17 +68,21 @@ public class GetUserInfoListTest {
 
         //设置请求参数
         JSONObject param = new JSONObject();
-        param.put("userName", getUserInfoCase.getUserName());
-        param.put("age", getUserInfoCase.getAge());
-        param.put("sex", getUserInfoCase.getSex());
+        param.put("userName", getUserInfoListCase.getUserName());
+        param.put("age", getUserInfoListCase.getAge());
+        param.put("sex", getUserInfoListCase.getSex());
         StringEntity entity = new StringEntity(param.toString(), "utf-8");
         post.setEntity(entity);
 
         //执行请求获取结果
+        String result;
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);
-        response.getEntity();
+        result = EntityUtils.toString(response.getEntity(), "utf-8");
 
-        return null;
+        //转换成json
+        JSONArray jsonResutlt = new JSONArray(result);
+
+        return jsonResutlt;
     }
 
 }
