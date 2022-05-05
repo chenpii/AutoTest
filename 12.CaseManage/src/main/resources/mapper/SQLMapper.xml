@@ -5,16 +5,6 @@
 
 <mapper namespace="com.course.model">
 
-    <!--实体类与数据库映射-->
-    <resultMap id="userMap" type="com.course.model.User">
-        <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="userName" jdbcType="VARCHAR" property="userName"/>
-        <result column="age" jdbcType="INTEGER" property="age"/>
-        <result column="sex" jdbcType="INTEGER" property="sex"/>
-        <result column="permission" jdbcType="INTEGER" property="permission"/>
-        <result column="isDelete" jdbcType="INTEGER" property="isDelete"/>
-    </resultMap>
-
     <!--    parameterType:传入参数类型-->
     <!--    resultType:返回值类型-->
 
@@ -22,69 +12,54 @@
     <select id="loginCase" parameterType="Integer" resultType="com.course.model.LoginCase">
         select *
         from LoginCase
-        where id = #{id}
-
+        where id = #{id};
     </select>
 
     <!--添加用户接口case-->
     <select id="addUserCase" parameterType="Integer" resultType="com.course.model.AddUserCase">
         select *
         from AddUserCase
-        where id = #{id}
-
+        where id = #{id};
     </select>
 
     <!--获取用户信息case-->
     <select id="getUserInfoCase" parameterType="Integer" resultType="com.course.model.GetUserInfoCase">
         select *
         from GetUserInfoCase
-        where id = #{id}
+        where id = #{id};
     </select>
 
     <!--获取用户列表case-->
     <select id="getUserInfoListCase" parameterType="Integer" resultType="com.course.model.GetUserInfoListCase">
         select *
         from GetUserLiSTCase
-        where id = #{id}
+        where id = #{id};
     </select>
 
     <!--更新/删除用户信息case-->
     <select id="updateUserCase" parameterType="Integer" resultType="com.course.model.UpdateUserInfoCase">
         select *
         from UpdateUserInfoCase
-        where id = #{id}
+        where id = #{id};
     </select>
 
 
-    <select id="addUser" parameterType="com.course.model.AddUserCase" resultMap="userMap">
-        select * from user
-        <trim prefix="WHERE" prefixOverrides="AND">
-            <if test="null !=userName and '' !=userName">
-                and userName = #{userName}
-            </if>
-            <if test="null !=password and '' !=password">
-                and password = #{password}
-            </if>
-            <if test="null !=sex and '' !=sex">
-                and sex = #{sex}
-            </if>
-            <if test="null !=age and '' !=age">
-                and age=#{age}
-            </if>
-            <if test="null !=permission and '' !=permission">
-                and permission = #{permission}
-            </if>
-            <if test="null !=isDelete and '' !=isDelete">
-                and isDelete = #{isDelete}
-            </if>
-        </trim>
+    <select id="addUser" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User">
+        select *
+        from user
+        where userName = #{userName}
+          and password = #{password}
+          and sex = #{sex}
+          and age = #{age}
+          and permission = #{permission}
+          and isDelete = #{isDelete};
     </select>
 
     <!--获取用户信息-->
     <select id="getUserInfo" parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.User">
         select *
         from user
-        where id = #{userId}
+        where id = #{userId};
     </select>
 
     <!--获取用户列表-->
@@ -101,7 +76,7 @@
                 and sex=#{sex}
             </if>
         </trim>
-
+        ;
     </select>
 
     <!--获取更新后的用户信息-->
@@ -126,5 +101,6 @@
                 and isDelete=#{isDelete}
             </if>
         </trim>
+        ;
     </select>
 </mapper>

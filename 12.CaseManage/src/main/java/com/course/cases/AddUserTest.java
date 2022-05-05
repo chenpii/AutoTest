@@ -38,7 +38,13 @@ public class AddUserTest {
 
         //验证返回结果
         Thread.sleep(3000);
-        User user = sqlSession.selectOne("addUser", addUserCase);
+
+        //解决新增后查不到数据的问题
+        //方式一：另外新建sqlsession去执行查询
+        SqlSession sqlSession2 = DatabaseUtil.getSqlSession();
+        User user = sqlSession2.selectOne("addUser", addUserCase);
+
+
         System.out.println(user.toString());
         Assert.assertEquals(addUserCase.getExpected(), result);
 

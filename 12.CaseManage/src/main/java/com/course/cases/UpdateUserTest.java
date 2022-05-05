@@ -31,7 +31,8 @@ public class UpdateUserTest {
         int result = getResult(updateUserCase);
 
         //断言
-        User user = sqlSession.selectOne(updateUserCase.getExpected(), updateUserCase);
+        SqlSession sqlSession2 = DatabaseUtil.getSqlSession();
+        User user = sqlSession2.selectOne(updateUserCase.getExpected(), updateUserCase);
         Assert.assertNotNull(user);
         Assert.assertNotNull(result);
     }
@@ -47,7 +48,8 @@ public class UpdateUserTest {
         int result = getResult(updateUserCase);
 
         //断言
-        User user = sqlSession.selectOne(updateUserCase.getExpected(), updateUserCase);
+        SqlSession sqlSession2 = DatabaseUtil.getSqlSession();
+        User user = sqlSession2.selectOne(updateUserCase.getExpected(), updateUserCase);
         Assert.assertNotNull(user);
         Assert.assertNotNull(result);
     }
