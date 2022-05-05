@@ -22,7 +22,7 @@
       <module name="10.SpringBoot" target="8" />
       <module name="11.MyBatis" target="8" />
       <module name="12.CaseManage" target="8" />
-      <module name="13.DataAssert" target="8" />
+      <module name="13.DataAssert" target="1.8" />
       <module name="AutoTest" target="8" />
     </bytecodeTargetLevel>
   </component>
@@ -31,7 +31,7 @@
       <module name="10.SpringBoot" options="-parameters" />
       <module name="11.MyBatis" options="-parameters" />
       <module name="12.CaseManage" options="-parameters" />
-      <module name="13.DataAssert" options="-parameters" />
+      <module name="13.DataAssert" options="-parameters -extdirs E:\developer\idea\workspace\AutoTest\13.DataAssert/lib" />
     </option>
   </component>
 </project>
