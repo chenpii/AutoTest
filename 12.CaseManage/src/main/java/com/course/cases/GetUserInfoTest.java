@@ -33,6 +33,7 @@ public class GetUserInfoTest {
 
         //发送请求获取结果
         JSONArray resultJson = getJsonResult(getUserInfoCase);
+
         //断言结果
         //数据获取实际结果
         List<User> userList = sqlSession.selectList(getUserInfoCase.getExpected(), getUserInfoCase);
@@ -49,7 +50,7 @@ public class GetUserInfoTest {
         HttpPost post = new HttpPost(TestConfig.getUserInfoUrl);
 
         //设置请求头
-        post.setHeader("Context-type", "application/json");
+        post.setHeader("Content-type", "application/json");
 
         //设置cookis
         TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
@@ -62,7 +63,7 @@ public class GetUserInfoTest {
 
         //执行请求
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);
-        String result = EntityUtils.toString(response.getEntity());
+        String result = EntityUtils.toString(response.getEntity(),"utf-8");
 
         //转成json
         JSONArray jsonResult = new JSONArray(result);

@@ -23,31 +23,6 @@
 
     </select>
 
-    <!--添加用户sql-->
-    <select id="addUser" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User">
-        select *
-        from user
-        <trim prefix="WHERE" prefixOverrides="AND">
-            <if test="null !=userName and '' !=userName">
-                AND userName=#{userName}
-            </if>
-            <if test="null !=password and '' !=password">
-                AND password=#{password}
-            </if>
-            <if test="null !=sex and '' !=sex">
-                AND sex=#{sex}
-            </if>
-            <if test="null !=age and '' !=age">
-                AND age=#{age}
-            </if>
-            <if test="null !=permission and '' !=permission">
-                AND permission=#{permission}
-            </if>
-            <if test="null !=isDelete and '' !=isDelete">
-                AND isDelete=#{isDelete}
-            </if>
-        </trim>
-    </select>
     <!--获取用户信息case-->
     <select id="getUserInfoCase" parameterType="Integer" resultType="com.course.model.GetUserInfoCase">
         select *
@@ -55,39 +30,13 @@
         where id = #{id}
     </select>
 
-
     <!--获取用户列表case-->
     <select id="getUserInfoListCase" parameterType="Integer" resultType="com.course.model.GetUserInfoListCase">
         select *
         from GetUserLiSTCase
         where id = #{id}
     </select>
-    <!--获取用户列表sql-->
-    <!--添加用户sql-->
-    <select id="addUser" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User">
-        select *
-        from user
-        <trim prefix="WHERE" prefixOverrides="AND">
-            <if test="null !=userName and '' !=userName">
-                AND userName=#{userName}
-            </if>
-            <if test="null !=password and '' !=password">
-                AND password=#{password}
-            </if>
-            <if test="null !=sex and '' !=sex">
-                AND sex=#{sex}
-            </if>
-            <if test="null !=age and '' !=age">
-                AND age=#{age}
-            </if>
-            <if test="null !=permission and '' !=permission">
-                AND permission=#{permission}
-            </if>
-            <if test="null !=isDelete and '' !=isDelete">
-                AND isDelete=#{isDelete}
-            </if>
-        </trim>
-    </select>
+
     <!--更新/删除用户信息case-->
     <select id="updateUserCase" parameterType="Integer" resultType="com.course.model.UpdateUserInfoCase">
         select *
@@ -95,4 +44,75 @@
         where id = #{id}
     </select>
 
+    <select id="addUser" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User">
+        select * from user
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="null !=userName and '' !=userName">
+                and userName = #{userName}
+            </if>
+            <if test="null !=password and '' !=password">
+                and password = #{password}
+            </if>
+            <if test="null !=sex and '' !=sex">
+                and sex = #{sex}
+            </if>
+            <if test="null !=age and '' !=age">
+                and age=#{age}
+            </if>
+            <if test="null !=permission and '' !=permission">
+                and permission = #{permission}
+            </if>
+            <if test="null !=isDelete and '' !=isDelete">
+                and isDelete = #{isDelete}
+            </if>
+        </trim>
+    </select>
+
+    <!--获取用户信息-->
+    <select id="getUserInfo" parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.User">
+        select *
+        from user
+        where id = #{userId}
+    </select>
+
+    <!--获取用户列表-->
+    <select id="getUserList" parameterType="com.course.model.GetUserInfoListCase" resultType="com.course.model.User">
+        select * from user
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="null !=userName and '' !=userName">
+                and userName=#{userName}
+            </if>
+            <if test="null !=age and '' !=age">
+                and age=#{age}
+            </if>
+            <if test="null !=sex and '' !=sex">
+                and sex=#{sex}
+            </if>
+        </trim>
+
+    </select>
+
+    <!--获取更新后的用户信息-->
+    <select id="getUpdateUserInfo" parameterType="com.course.model.UpdateUserInfoCase"
+            resultType="com.course.model.User">
+        select * from user
+        where id=#{userId}
+        <trim>
+            <if test="null !=userName and '' !=userName">
+                and userName=#{userName}
+            </if>
+            <if test="null !=sex and '' !=sex">
+                and sex=#{sex}
+            </if>
+            <if test="null !=age and '' !=age">
+                and age=#{age}
+            </if>
+            <if test="null !=permission and '' !=permission">
+                and permission=#{permission}
+            </if>
+            <if test="null !=isDelete and '' !=isDelete">
+                and isDelete=#{isDelete}
+            </if>
+        </trim>
+    </select>
 </mapper>

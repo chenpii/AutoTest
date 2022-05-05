@@ -58,14 +58,14 @@ public class UpdateUserTest {
         HttpPost post = new HttpPost(TestConfig.updateUserInfoUrl);
 
         //请求头
-        post.setHeader("Context-type", "application/json");
+        post.setHeader("Content-type", "application/json");
 
         //Cookies
         TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
 
         //请求参数
         JSONObject param = new JSONObject();
-        param.put("userId", updateUserCase.getUserId());
+        param.put("id", updateUserCase.getUserId());
         param.put("userName", updateUserCase.getUserName());
         param.put("sex", updateUserCase.getSex());
         param.put("age", updateUserCase.getAge());
@@ -76,7 +76,8 @@ public class UpdateUserTest {
 
         //执行请求
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);
-        int result= param.getInt(EntityUtils.toString(response.getEntity()));
+        System.out.println(response);
+        int result=Integer.parseInt(EntityUtils.toString(response.getEntity(),"utf-8"));
 
         return result;
     }

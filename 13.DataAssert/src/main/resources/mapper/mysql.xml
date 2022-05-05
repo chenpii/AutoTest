@@ -68,8 +68,7 @@
             <if test="null !=isDelete and '' !=isDelete ">
                 isDelete=#{isDelete}
             </if>
-
-
         </trim>
+        WHERE id=#{id}
     </update>
 </mapper>

@@ -25,7 +25,7 @@ import java.io.UnsupportedEncodingException;
 public class AddUserTest {
 
     @Test(dependsOnGroups = "loginSuccess", description = "添加用户接口测试")
-    public void addUser_Success() throws IOException {
+    public void addUser_Success() throws IOException, InterruptedException {
         SqlSession sqlSession = DatabaseUtil.getSqlSession();
 
         //获取id为1的测试数据
@@ -37,6 +37,7 @@ public class AddUserTest {
         String result = getResult(addUserCase);
 
         //验证返回结果
+        Thread.sleep(3000);
         User user = sqlSession.selectOne("addUser", addUserCase);
         System.out.println(user.toString());
         Assert.assertEquals(addUserCase.getExpected(), result);
